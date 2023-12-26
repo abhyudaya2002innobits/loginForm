@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { Button } from 'antd';
 import './App.css';
 const Header=()=>{
   return (
@@ -21,7 +22,7 @@ const LoginForm = () => {
   // const [email,setEmail]=useState('')
   // const [passward,setPassword]=useState('')
   const { handleSubmit, register, formState: { errors} } = useForm();
-  const onSubmit = ((data:any) => console.log(`The email  is ${data.email} and  is passwrod is ${data.password}`));
+  const onSubmit = ((data:any) => console.log(`The email  is ${data.email} and  is passwrod is ${data.password} and age ${data.age}`));
 
   return (
     <>
@@ -42,6 +43,8 @@ const LoginForm = () => {
               })}
              
             />
+            
+            
             {errors.email && <div className="error">{String(errors.email.message)}</div>}
           </label>
           <label>
@@ -58,11 +61,33 @@ const LoginForm = () => {
                 },
               })}
               
+              
               />
               {errors.password && <div className="error">{String(errors.password.message)}</div>}
           </label>
-          <input className={'inputButton'} type='submit' value={'Log in'} />
+          <label >
+              Age:
+              <input
+              type="number"
+              placeholder="Age"
+              {...register('age', {
+                required: 'Age is required',
+                min: { value: 18, message: 'Age should be greater than or equal to 18.' },
+                max: { value: 99, message: 'Age should be less than or equal to 99.' },
+                pattern: { value: /^[0-9]*$/, message: 'Please enter a valid age.' },
+              })}
+            />
+            {errors.age && <div className="error-message">{String(errors.age.message)}</div>}
+
+            
+
+            </label>
+          {/* <input className={'inputButton'} type='submit' value={'Sign Up'} /> */}
+          <div className='inputButton'>
+          <Button type="primary">Sign Up</Button>
+        </div>
         </form>
+        
       </div>
     </>
   );
