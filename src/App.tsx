@@ -1,7 +1,44 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Button } from 'antd';
+
 import './App.css';
+// import { DownOutlined, SmileOutlined } from '@ant-design/icons';
+// import type { MenuProps } from 'antd';
+// import { Dropdown, Space } from 'antd';
+// const items: MenuProps['items'] = [
+//   {
+//     key: '1',
+//     label: (
+//       <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+//         1st menu item
+//       </a>
+//     ),
+//   },
+//   {
+//     key: '2',
+//     label: (
+//       <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
+//         2nd menu item (disabled)
+//       </a>
+//     ),
+//     icon: <SmileOutlined />,
+//     disabled: true,
+//   },
+//   {
+//     key: '3',
+//     label: (
+//       <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+//         3rd menu item (disabled)
+//       </a>
+//     ),
+//     disabled: true,
+//   },
+//   {
+//     key: '4',
+//     danger: true,
+//     label: 'a danger item',
+//   },
+// ];
 const Header=()=>{
   return (
     <>
@@ -18,6 +55,21 @@ const Header=()=>{
   )
 }
 // *****
+// const MyDropdown: React.FC = () => (
+//   <Dropdown menu={{ items }}>
+    
+//     <a onClick={(e) => e.preventDefault()}>
+//       {/* Space for styling */}
+//       <Space>
+//         Hover me
+        
+//         <DownOutlined />
+//       </Space>
+//     </a>
+//   </Dropdown>
+// );
+
+
 const LoginForm = () => {
   // const [email,setEmail]=useState('')
   // const [passward,setPassword]=useState('')
@@ -45,7 +97,7 @@ const LoginForm = () => {
             />
             
             
-            {errors.email && <div className="error">{String(errors.email.message)}</div>}
+            {errors.email && <div className="error-message">{String(errors.email.message)}</div>}
           </label>
           <label>
             Enter Password
@@ -63,7 +115,7 @@ const LoginForm = () => {
               
               
               />
-              {errors.password && <div className="error">{String(errors.password.message)}</div>}
+              {errors.password && <div className="error-message">{String(errors.password.message)}</div>}
           </label>
           <label >
               Age:
@@ -82,10 +134,9 @@ const LoginForm = () => {
             
 
             </label>
-          {/* <input className={'inputButton'} type='submit' value={'Sign Up'} /> */}
-          <div className='inputButton'>
-          <Button type="primary">Sign Up</Button>
-        </div>
+          <input className={'inputButton'} type='submit' value={'Sign Up'} />
+         
+        
         </form>
         
       </div>
@@ -98,6 +149,7 @@ function App() {
     <>
       <Header/>
       <LoginForm />
+      {/* <MyDropdown/> */}
     </>
   );
 }
