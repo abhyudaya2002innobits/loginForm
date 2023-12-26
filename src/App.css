@@ -1,0 +1,73 @@
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Center the form vertically on the page */
+  
+}
+
+.form-content {
+  width: 420px;
+  box-shadow: 0 0 10px rgba(236, 9, 9, 0.16);
+  padding: 30px;
+  border-radius: 8px;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.inputButton {
+  background-color: rgb(104, 201, 231);
+  cursor: pointer;
+  height: 40px;
+  width: 100%; /* Take full width of the container */
+  margin-top: 2px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 200;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transition: background-color 0.3s;
+}
+
+.inputButton:hover {
+  background-color: #4fa3d1; /* Lighter shade when hovered */
+}
+
+.email-box,
+.password-box {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px; /* Add some space between input fields */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .form-content {
+    width: 100%;
+  }
+}
+.header {
+  border: 2px solid black;
+  padding: 10px; 
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+ 
+
+  list-style: none;
+
+}
+
+.nav-items li {
+  
+  cursor: pointer; 
+}
+
+
