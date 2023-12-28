@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 // import Home from './Home';
 const LoginForm = () => {
     const navigate = useNavigate();
-    // const [signup,setSignup]=useState()
+    // const [signup,setSignup]=useState("signup")
     const { handleSubmit, register, formState: { errors} } = useForm();
     const onSignup = (data:any) => {
         navigate("/contact")
